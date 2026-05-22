@@ -224,8 +224,8 @@
   <path d="M460,333 L460,355 L150,355 L150,535" stroke="#ff9900" stroke-width="2" fill="none" marker-end="url(#arrow-solid)"/>
   <path d="M540,333 L540,355 L640,355 L640,535" stroke="#ff9900" stroke-width="2" fill="none" marker-end="url(#arrow-solid)"/>
 
-  <!-- EC2 outbound to NAT (route to NAT bottom edge) -->
-  <path d="M150,535 L150,475 L230,475" stroke="#58a6ff" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-dashed)"/>
+  <!-- EC2 outbound to NAT (arrow points UP at NAT bottom edge) -->
+  <path d="M150,535 L150,478" stroke="#58a6ff" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-dashed)"/>
 
   <!-- NAT to IGW (direct horizontal through public subnets) -->
   <path d="M230,445 L600,445" stroke="#58a6ff" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-dashed)"/>
