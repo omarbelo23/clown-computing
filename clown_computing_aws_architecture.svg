@@ -95,6 +95,39 @@
 
   <rect width="100%" height="100%" fill="#0d1117"/>
 
+  <!-- ==================== CONNECTIONS (BEHIND ALL OBJECTS) ==================== -->
+  <path d="M103,145 L210,145" stroke="#ff9900" stroke-width="2" marker-end="url(#arrow-solid)"/>
+  <path d="M79,120 L79,95 L430,95 L430,112" stroke="#ff9900" stroke-width="2" fill="none" marker-end="url(#arrow-solid)"/>
+  <path d="M300,180 L630,180" stroke="#58a6ff" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow-dashed)"/>
+  <path d="M600,145 L630,145" stroke="#58a6ff" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow-dashed)"/>
+  <text x="465" y="175" text-anchor="middle" font-size="10" fill="#58a6ff">Authentication</text>
+  <path d="M600,145 L600,195 L500,195 L500,268" stroke="#ff9900" stroke-width="2" fill="none" marker-end="url(#arrow-solid)"/>
+  <text x="550" y="190" text-anchor="middle" font-size="10" fill="#ff9900">API requests</text>
+  <path d="M460,333 L460,355 L150,355 L150,535" stroke="#ff9900" stroke-width="2" fill="none" marker-end="url(#arrow-solid)"/>
+  <path d="M540,333 L540,355 L640,355 L640,535" stroke="#ff9900" stroke-width="2" fill="none" marker-end="url(#arrow-solid)"/>
+  <path d="M150,535 L150,478" stroke="#58a6ff" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-dashed)"/>
+  <path d="M230,445 L600,445" stroke="#58a6ff" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-dashed)"/>
+  <text x="415" y="440" text-anchor="middle" font-size="9" fill="#58a6ff">Outbound</text>
+  <path d="M60,600 L60,615 L30,615 L30,760" stroke="#58a6ff" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-dashed)"/>
+  <path d="M150,600 L150,618 L225,618 L225,760" stroke="#58a6ff" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-dashed)"/>
+  <path d="M640,600 L640,615 L427,615 L427,760" stroke="#58a6ff" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-dashed)"/>
+  <path d="M640,600 L640,625 L589,625 L589,760" stroke="#58a6ff" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-dashed)"/>
+  <path d="M264,825 L264,840 L225,840 L225,855" stroke="#f0883e" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-event)"/>
+  <text x="235" y="838" font-size="9" fill="#f0883e">S3 event</text>
+  <path d="M589,825 L589,840 L500,840 L500,855" stroke="#f0883e" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-event)"/>
+  <text x="535" y="838" font-size="9" fill="#f0883e">Trigger</text>
+  <path d="M750,825 L750,840 L775,840 L775,855" stroke="#f0883e" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-event)"/>
+  <text x="755" y="838" font-size="9" fill="#f0883e">Cron 09:00 UTC</text>
+  <path d="M375,920 L375,940 L110,940 L110,825" stroke="#58a6ff" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-dashed)"/>
+  <text x="240" y="936" font-size="9" fill="#58a6ff">Write</text>
+  <path d="M625,920 L625,935 L900,935 L900,825" stroke="#58a6ff" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-dashed)"/>
+  <path d="M650,920 L650,955 L110,955 L110,825" stroke="#58a6ff" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-dashed)"/>
+  <text x="380" y="951" font-size="9" fill="#58a6ff">Read</text>
+  <path d="M775,920 L775,970 L427,970 L427,825" stroke="#58a6ff" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-dashed)"/>
+  <text x="580" y="966" font-size="9" fill="#58a6ff">Send email</text>
+  <path d="M905,760 L905,630 L300,630 L300,535" stroke="#E7157B" stroke-width="1" stroke-dasharray="3,3" fill="none" opacity="0.4"/>
+
+
   <!-- Title -->
   <text x="500" y="45" text-anchor="middle" font-size="26" font-weight="bold" fill="#f0f6fc">Clown Computing — AWS Architecture</text>
   <text x="500" y="68" text-anchor="middle" font-size="13" fill="#8b949e">Region: eu-north-1 | VPC: clown-vpc (10.0.0.0/16)</text>
@@ -124,16 +157,8 @@
   <text x="698" y="138" font-size="13" font-weight="bold" fill="#e6edf3">Cognito</text>
   <text x="698" y="158" font-size="10" fill="#8b949e">Sign in / Sign up</text>
 
-  <!-- Layer 1 connections -->
   <!-- User → Amplify (direct) -->
-  <path d="M103,145 L210,145" stroke="#ff9900" stroke-width="2" marker-end="url(#arrow-solid)"/>
-  <!-- User → CloudFront (route above Amplify) -->
-  <path d="M79,120 L79,95 L430,95 L430,112" stroke="#ff9900" stroke-width="2" fill="none" marker-end="url(#arrow-solid)"/>
-  <!-- Amplify → Cognito (route below all top boxes) -->
-  <path d="M300,180 L630,180" stroke="#58a6ff" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow-dashed)"/>
   <!-- CloudFront → Cognito (direct) -->
-  <path d="M600,145 L630,145" stroke="#58a6ff" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow-dashed)"/>
-  <text x="465" y="175" text-anchor="middle" font-size="10" fill="#58a6ff">Authentication</text>
 
   <!-- ==================== LAYER 2: VPC ==================== -->
   <rect x="20" y="230" width="960" height="460" rx="14" fill="url(#vpc-grad)" stroke="#8C4FFF" stroke-width="2" stroke-dasharray="8,4"/>
@@ -146,9 +171,6 @@
   <text x="478" y="295" font-size="13" font-weight="bold" fill="#e6edf3">ALB</text>
   <text x="478" y="315" font-size="10" fill="#8b949e">clown-alb (80/443)</text>
 
-  <!-- CloudFront to ALB connection (route right side, avoid Amplify→Cognito) -->
-  <path d="M600,145 L600,195 L500,195 L500,268" stroke="#ff9900" stroke-width="2" fill="none" marker-end="url(#arrow-solid)"/>
-  <text x="550" y="190" text-anchor="middle" font-size="10" fill="#ff9900">API requests</text>
 
   <!-- ========== AZ-A ========== -->
   <rect x="30" y="350" width="455" height="330" rx="8" fill="rgba(22,27,34,0.5)" stroke="#30363d" stroke-width="1.5"/>
@@ -220,16 +242,9 @@
   <use href="#auto-scaling" x="308" y="634" width="20" height="20"/>
   <text x="336" y="648" font-size="12" font-weight="bold" fill="#e6edf3">clown-asg (min:2 / max:4 / des:2)</text>
 
-  <!-- Connections: ALB to EC2s (route above AZ labels) -->
-  <path d="M460,333 L460,355 L150,355 L150,535" stroke="#ff9900" stroke-width="2" fill="none" marker-end="url(#arrow-solid)"/>
-  <path d="M540,333 L540,355 L640,355 L640,535" stroke="#ff9900" stroke-width="2" fill="none" marker-end="url(#arrow-solid)"/>
 
-  <!-- EC2 outbound to NAT (arrow points UP at NAT bottom edge) -->
-  <path d="M150,535 L150,478" stroke="#58a6ff" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-dashed)"/>
 
   <!-- NAT to IGW (direct horizontal through public subnets) -->
-  <path d="M230,445 L600,445" stroke="#58a6ff" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-dashed)"/>
-  <text x="415" y="440" text-anchor="middle" font-size="9" fill="#58a6ff">Outbound</text>
 
   <!-- ==================== LAYER 3: AWS MANAGED SERVICES ==================== -->
   <rect x="15" y="720" width="970" height="250" rx="10" fill="url(#vpc-grad)" stroke="#30363d" stroke-width="1.5"/>
@@ -282,43 +297,6 @@
   <text x="718" y="882" font-size="12" font-weight="bold" fill="#e6edf3">Lambda: daily-digest</text>
   <text x="718" y="900" font-size="9" fill="#8b949e">DynamoDB → SNS</text>
 
-  <!-- ==================== INTER-SERVICE CONNECTIONS ==================== -->
-
-  <!-- EC2 → DynamoDB, S3, SNS, SQS (route above ASG label at y=620) -->
-  <path d="M60,600 L60,620 L30,620 L30,760" stroke="#58a6ff" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-dashed)"/>
-  <path d="M150,600 L150,620 L225,620 L225,760" stroke="#58a6ff" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-dashed)"/>
-  <path d="M640,600 L640,620 L427,620 L427,760" stroke="#58a6ff" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-dashed)"/>
-  <path d="M640,600 L640,620 L589,620 L589,760" stroke="#58a6ff" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-dashed)"/>
-
-  <!-- S3 → Lambda image-resize -->
-  <path d="M264,825 L264,840 L225,840 L225,855" stroke="#f0883e" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-event)"/>
-  <text x="235" y="838" font-size="9" fill="#f0883e">S3 event</text>
-
-  <!-- SQS → Lambda assignment-worker -->
-  <path d="M589,825 L589,840 L500,840 L500,855" stroke="#f0883e" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-event)"/>
-  <text x="535" y="838" font-size="9" fill="#f0883e">Trigger</text>
-
-  <!-- EventBridge → Lambda daily-digest (cron) -->
-  <path d="M750,825 L750,840 L775,840 L775,855" stroke="#f0883e" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-event)"/>
-  <text x="755" y="838" font-size="9" fill="#f0883e">Cron 09:00 UTC</text>
-
-  <!-- Lambda assignment-worker → DynamoDB (route below Lambda boxes) -->
-  <path d="M375,920 L375,940 L110,940 L110,825" stroke="#58a6ff" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-dashed)"/>
-  <text x="240" y="936" font-size="9" fill="#58a6ff">Write</text>
-
-  <!-- Lambda assignment-worker → CloudWatch (route below Lambda boxes) -->
-  <path d="M625,920 L625,935 L900,935 L900,825" stroke="#58a6ff" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-dashed)"/>
-
-  <!-- Lambda daily-digest → DynamoDB (route below other Lambda lines) -->
-  <path d="M650,920 L650,955 L110,955 L110,825" stroke="#58a6ff" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-dashed)"/>
-  <text x="380" y="951" font-size="9" fill="#58a6ff">Read</text>
-
-  <!-- Lambda daily-digest → SNS (route below all Lambda connections) -->
-  <path d="M775,920 L775,970 L427,970 L427,825" stroke="#58a6ff" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-dashed)"/>
-  <text x="580" y="966" font-size="9" fill="#58a6ff">Send email</text>
-
-  <!-- CloudWatch monitoring lines (subtle, route below EC2→Services lines) -->
-  <path d="M905,760 L905,630 L300,630 L300,535" stroke="#E7157B" stroke-width="1" stroke-dasharray="3,3" fill="none" opacity="0.4"/>
 
   <!-- Legend -->
   <rect x="15" y="990" width="970" height="60" rx="8" fill="rgba(22,27,34,0.4)" stroke="#30363d" stroke-width="1"/>
@@ -337,3 +315,4 @@
   <!-- Footer -->
   <text x="500" y="1085" text-anchor="middle" font-size="10" fill="#484f58">Clown Computing — AWS Architecture Diagram | Generated with official AWS icons</text>
 </svg>
+
